@@ -18,7 +18,7 @@ echo "Installing ArgoCD..."
 echo "======================================"
 helm upgrade --install argocd argocd/argo-cd \
   --namespace argocd \
-  -f manifests/argocd-values.yaml \
+  -f infra/argocd-values.yaml \
   --create-namespace \
   --wait
 
@@ -45,4 +45,4 @@ echo "======================================"
 echo "Adding Argo App..."
 echo "======================================"
 
-kubectl apply -f infra/manifests/argo-app.yaml
+kubectl apply -f infra/argo-app.yaml
