@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: dep-graphql-pyp
+  name: dep-graphql-pyp
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: dep-graphql-pyp
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: dep-graphql-pyp
+    spec:
+      containers:
+        - image: graphql-py:latest
+          name: graphql-py
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 8000
+          resources: {}
+status: {}

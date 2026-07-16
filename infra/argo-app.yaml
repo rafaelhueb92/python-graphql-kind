@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: graphql-app
+  namespace: default
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/rafaelhueb92/python-graphql-kind
+    targetRevision: master
+    path: infra/manifests
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: default
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
