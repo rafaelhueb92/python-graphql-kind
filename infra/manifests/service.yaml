@@ -7,9 +7,9 @@ metadata:
   name: dep-graphql-pyp
 spec:
   ports:
-  - port: 8080
-    protocol: TCP
-    targetPort: 8000
+    - port: 80
+      protocol: TCP
+      targetPort: 8000
   selector:
     app: dep-graphql-pyp
 status:
